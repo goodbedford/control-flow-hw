@@ -1,0 +1,26 @@
+var userLogin = {
+    password:"$cashmoney",
+    email: "goodb@gmail.com"
+}
+
+function getUserLogin(user){
+ var numChances = 2;
+ var re = /^\w+[\w-\.]*\@\w+((-\w+)|(\w*))\.[a-z]{2,3}$/;
+ var rePw = /(?=^.{6,10}$)(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[!@#$%^&amp;*()_+}{&quot;:;'?/&gt;.&lt;,])(?!.*\s).*$/;
+ var rePwDetails ="This regular expression match can be used for validating strong password. It expects atleast 1 small-case letter, 1 Capital letter, 1 digit, 1 special character and the length should be between 6-10 characters. The sequence of the characters is not important. This expression follows the above 4 norms specified by microsoft for a strong password."
+    tempUser = {};
+    tempUser.email = prompt("Please Enter email:");
+    
+    if (tempUser.email.search(re) != -1){
+        console.log("Ya boi");
+    }
+    tempUser.password = prompt("Please Enter password");
+    if (tempUser.password.search(rePw) != -1){
+        console.log("your password is hercules strong");
+    }else{
+        console.log(rePwDetails);
+    }
+
+}
+
+getUserLogin(userLogin);
