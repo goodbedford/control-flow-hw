@@ -1,13 +1,31 @@
 var userLogin = {
-    name: "",
-    password:""
+    name: "goodbedford",
+    password:"$cashmoney"
 }
 
 function getUserLogin(user){
-    user.name = prompt("Please Enterusername");
-    user.password = prompt("Please Enter password:");
+    numChances = 2;
+    tempUser = {};
+    tempPassword = "";
+    tempUser.name = prompt("Please Enter username");
+    tempUser.password = prompt("Please Enter password:");
 
-    console.log("Thanks for joining us again "+ user.name);
+    if ( tempUser.password != user.password){
+      for(var i = 0; i < numChances; i++ ){
+        tempUser.password = prompt("Please Enter Correct Password.");
+        if (tempPassword == user.password){
+            console.log("Password Correct");
+            break;
+        }
+        if (i == numChances -1){
+            console.log("Sorry, No more logins.");
+        }
+      }
+    }else{
+     console.log("Thanks for joining us again "+ user.name);
+     console.log("Correct Login");
+    }
+
 
 }
 
