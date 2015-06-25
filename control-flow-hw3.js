@@ -12,7 +12,7 @@ var securityQuestions = [
 
 function getSecurityAnswer(questions){
 var tempAnswer = "";
-    for(var questionsAsked = 0; questionsAsked < 2; questionsAsked++){ 
+    for(var questionsAsked = 0; questionsAsked < questions.length; questionsAsked++){ 
         
         tempAnswer = prompt(questions[questionsAsked].question);
         if ( tempAnswer != questions[questionsAsked].expectedAnswer){
